@@ -4,6 +4,10 @@ const bodyParser= require('body-parser');
 const port=8000;
 const app= express();
 
+
+const User= require('./models/User');
+mongoose.connect('mongodb://localhost/userData');
+
 app.use(bodyParser.json());
 
 app.listen(port, ()=>{
@@ -18,6 +22,9 @@ app.post('/users',(req,res)=>{
 app.route('/users/:id')
 // READ
 .get((req,res)=>{
+  res.json({
+    success: true
+  });
   // User.findById()
 })
 // UPDATE

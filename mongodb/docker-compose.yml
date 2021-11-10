@@ -1,0 +1,12 @@
+version: "3.2"
+services:
+    mongodb:
+        container_name: mongodb2
+        image: mongo
+        environment:
+        - PUID=1000
+        - PGID=1000
+        volumes: 
+        - /home/why/projects/intermediate-node-course/mongodb/database:/data/db
+        ports:
+        - 27017:27017
